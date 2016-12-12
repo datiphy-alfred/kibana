@@ -104,10 +104,10 @@ function myDiscoverController($scope, config, courier, $route, $window, Notifier
   $scope.intervalOptions = Private(AggTypesBucketsIntervalOptionsProvider);
   $scope.showInterval = false;
 
-  $scope.arrayTest = ["Asset", "Pivot", "Statistics", "Templates"];
+  $scope.arrayTest = ['Asset', 'Pivot', 'Statistics', 'Templates'];
 
-  $scope.testTab = function(item){
-    console.log("[discover.js] testTab: " + item );
+  $scope.testTab = function (item) {
+    //print statement here.
   };
 
   $scope.intervalEnabled = function (interval) {
@@ -115,7 +115,7 @@ function myDiscoverController($scope, config, courier, $route, $window, Notifier
   };
 
   $scope.toggleInterval = function () {
-    console.log("[discover.js] toggleInterval");
+    // alfredt: print statement here.
 
     $scope.showInterval = !$scope.showInterval;
   };
@@ -128,7 +128,8 @@ function myDiscoverController($scope, config, courier, $route, $window, Notifier
     key: 'new',
     description: 'New Search (MyDiscover)',
     run: function () {
-      console.log("[discover.js] new");
+      // alfredt: print statement here
+
       kbnUrl.change('/my_discover');
     }
   }, {
@@ -153,7 +154,7 @@ function myDiscoverController($scope, config, courier, $route, $window, Notifier
 
 /*** BEG: INSERT FOR TIME SAVE ***/
 
-  if(savedSearch.timeRestore && savedSearch.timeTo && savedSearch.timeFrom ) { // && !getAppState.previouslyStored()) {
+  if (savedSearch.timeRestore && savedSearch.timeTo && savedSearch.timeFrom) { // && !getAppState.previouslyStored()) {
     timefilter.time.to   = savedSearch.timeTo;
     timefilter.time.from = savedSearch.timeFrom;
     // if (savedSearch.refreshInterval) {
@@ -343,7 +344,7 @@ function myDiscoverController($scope, config, courier, $route, $window, Notifier
 
   // alfredt: save data source
   $scope.opts.saveDataSource = function () {
-    console.log("[my_discover/discover.js] saveDataSource");
+    // alfredt: print statement here
 
     return $scope.updateDataSource()
     .then(function () {
@@ -361,13 +362,10 @@ function myDiscoverController($scope, config, courier, $route, $window, Notifier
 
         if (id) {
 
-          var msg = 'Saved Data Source "' + savedSearch.title + '"';
-          var test = "[my_discover/discover.js] saveDataSource";
+          var msg  = 'Saved Data Source "' + savedSearch.title + '"';
+          var test = '[my_discover/discover.js] saveDataSource';
 
-          console.log(test);
           notify.info(test);
-
-          console.log(msg);
           notify.info(msg);
 
           if (savedSearch.id !== $route.current.params.id) {
@@ -504,8 +502,7 @@ function myDiscoverController($scope, config, courier, $route, $window, Notifier
   }).catch(notify.fatal);
 
   $scope.updateTime = function () {
-    console.log("[discover.js] updateTime");
-
+    // alfredt: print statement here.
     $scope.timeRange = {
       from: dateMath.parse(timefilter.time.from),
       to: dateMath.parse(timefilter.time.to, true)
@@ -513,8 +510,7 @@ function myDiscoverController($scope, config, courier, $route, $window, Notifier
   };
 
   $scope.resetQuery = function () {
-    console.log("[discover.js] resetQuery");
-
+    // alfredt: print statement here.
     kbnUrl.change('/my_discover/{{id}}', { id: $route.current.params.id });
   };
 

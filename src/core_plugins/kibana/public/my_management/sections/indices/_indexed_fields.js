@@ -43,36 +43,35 @@ uiModules.get('apps/my_management')
         _.find($scope.fieldTypes, {index: 'myIndexedFields'}).count = fields.length; // Update the tab count
 
         $scope.rows = fields.map(function (field) {
-          
+
           const childScope = _.assign($scope.$new(), { debug: true, field: field });
           rowScopes.push(childScope);
 
           return [{
-              markup: nameHtml,
-              scope: childScope,
-              value: field.displayName
-            }, {
-              markup: aliasHtml,
-              scope: childScope,
-              value: field.displayName
-            }, {
-              markup: typeHtml,
-              scope: childScope,
-              value: field.type
-            }, _.get($scope.indexPattern, ['fieldFormatMap', field.name, 'type', 'title']), {
-              markup: field.searchable ? yesTemplate : noTemplate,
-              value: field.searchable
-            }, {
-              markup: field.aggregatable ? yesTemplate : noTemplate,
-              value: field.aggregatable
-            }, {
-              markup: field.analyzed ? yesTemplate : noTemplate,
-              value: field.analyzed
-            }, {
-              markup: controlsHtml,
-              scope: childScope
-            }
-          ];
+            markup: nameHtml,
+            scope: childScope,
+            value: field.displayName
+          }, {
+            markup: aliasHtml,
+            scope: childScope,
+            value: field.displayName
+          }, {
+            markup: typeHtml,
+            scope: childScope,
+            value: field.type
+          }, _.get($scope.indexPattern, ['fieldFormatMap', field.name, 'type', 'title']), {
+            markup: field.searchable ? yesTemplate : noTemplate,
+            value: field.searchable
+          }, {
+            markup: field.aggregatable ? yesTemplate : noTemplate,
+            value: field.aggregatable
+          }, {
+            markup: field.analyzed ? yesTemplate : noTemplate,
+            value: field.analyzed
+          }, {
+            markup: controlsHtml,
+            scope: childScope
+          }];
         });
       }
     }

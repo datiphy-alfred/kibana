@@ -14,13 +14,13 @@ uiRoutes
 .defaults(/my_management\/kibana\/indices\/[^\/]+\/(field|create-field)(\/|$)/, {
 //.defaults(/management\/kibana\/indices\/[^\/]+\/(field|create-field)(\/|$)/, {
   template: fieldEditorTemplate,
-  
+
   resolve: {
     indexPattern: function ($route, courier) {
       var ipi   = $route.current.params.indexPatternId;
-      var c_get = courier.indexPatterns.get(ipi);
+      var cGet = courier.indexPatterns.get(ipi);
 
-      return c_get.catch(courier.redirectWhenMissing('/my_management/kibana/indices'));
+      return cGet.catch(courier.redirectWhenMissing('/my_management/kibana/indices'));
     }
   },
 

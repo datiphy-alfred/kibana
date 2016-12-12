@@ -32,15 +32,15 @@ uiModules
     restrict: 'E',
     template: appTemplate,
     transclude: true,
-    scope: { 
+    scope: {
       sectionName: '@section'
-    , debug: true
+      // alfredt: , debug: true (this doesn't  actually work)
     },
     link: function ($scope) {
       timefilter.enabled = false;
       $scope.sections = management.items.inOrder;
       $scope.section  = management.getSection($scope.sectionName) || management;
-      $scope.debug    = true;
+      // alfredt: debug = true (this doesn't  actually work)
 
       if ($scope.section) {
         $scope.section.items.forEach(item => {
@@ -56,8 +56,6 @@ uiModules
 uiModules
 .get('apps/my_management')
 .directive('myKbnManagementLanding', function (kbnVersion) {
-
-
   return {
     restrict: 'E',
     link: function ($scope) {

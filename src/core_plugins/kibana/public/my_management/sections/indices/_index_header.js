@@ -11,7 +11,7 @@ uiModules
       setDefault: '&',
       refreshFields: '&',
       delete: '&'
-    , debug: true
+      // alfredt: , debug: true
     },
     link: function ($scope, $el, attrs) {
       $scope.delete        = attrs.delete ? $scope.delete : null;

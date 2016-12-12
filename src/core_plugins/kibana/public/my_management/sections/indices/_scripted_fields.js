@@ -92,7 +92,7 @@ uiModules.get('apps/my_management')
         const params = {
           indexPattern: $scope.indexPattern.id,
           fieldName: field.name
-        , debug: true
+        // alfredt: @$#$#@ , debug: true
         };
 
         kbnUrl.change(fieldEditorPath, params);

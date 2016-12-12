@@ -7,12 +7,12 @@ import 'plugins/kibana/my_management/sections/indices/_create';
 import 'plugins/kibana/my_management/sections/indices/_edit';
 import 'plugins/kibana/my_management/sections/indices/_field_editor';
 
-function print_aac(assocArray){for(var key in assocArray) console.log("key: "+key+" value: "+assocArray[key]);}
+// alfredt: function print_aac(assocArray){for(var key in assocArray) console.log("key: "+key+" value: "+assocArray[key]);}
 
 const indexPatternsResolutions = {
   indexPatternIds: function (courier) {
-    var c_ids = courier.indexPatterns.getIds();
-    return c_ids;
+    var cIds = courier.indexPatterns.getIds();
+    return cIds;
   }
 };
 

@@ -45,7 +45,7 @@ module.factory('SavedSearch', function (courier) {
     timeRestore: 'boolean',
     timeTo: 'string',
     timeFrom: 'string',
-    
+
     version: 'integer'
   };
 
