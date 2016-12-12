@@ -5,7 +5,7 @@
   <kbn-top-nav name="management-subnav" data-test-subj="managementNav">
     <div class="localTabs">
       <span ng-if="!sectionName" class="localTab">
-        Hello: {{::section.display}}
+        Hello(App_1): {{::section.display}}
       </span>
 
       <a ng-if="sectionName"
@@ -19,7 +19,7 @@
         tooltip-popup-delay="400"
         tooltip-append-to-body="1"
       >
-        Hello: {{::item.display}}
+        Hello(App_2): {{::item.display}}
       </a>
     </div>
   </kbn-top-nav>

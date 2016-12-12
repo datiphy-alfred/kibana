@@ -1,9 +1,9 @@
 import _ from 'lodash';
 
-import chrome      from 'ui/chrome/chrome';
-import management  from 'ui/management';
-import uiRoutes  from 'ui/routes';
-import uiModules from 'ui/modules';
+import chrome     from 'ui/chrome/chrome';
+import management from 'ui/management';
+import uiRoutes   from 'ui/routes';
+import uiModules  from 'ui/modules';
 import 'ui/kbn_top_nav';
 import 'ui/directives/bread_crumbs';
 import 'ui/filters/start_from';
