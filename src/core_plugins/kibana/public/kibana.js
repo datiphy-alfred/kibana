@@ -1,17 +1,25 @@
 // autoloading
 
 // preloading (for faster webpack builds)
-import moment from 'moment-timezone';
-import chrome from 'ui/chrome';
-import routes from 'ui/routes';
+import moment  from 'moment-timezone';
+import chrome  from 'ui/chrome';
+import routes  from 'ui/routes';
 import modules from 'ui/modules';
 
 import kibanaLogoUrl from 'ui/images/kibana.svg';
 import 'ui/autoload/all';
+////////////////// THE URL???? //////////////////////////
+
+import 'plugins/kibana/my_discover/index';
+import 'plugins/kibana/my_management/index';
+
 import 'plugins/kibana/discover/index';
 import 'plugins/kibana/visualize/index';
 import 'plugins/kibana/dashboard/index';
-import 'plugins/kibana/management/index';
+//import 'plugins/kibana/management/index';
+
+////////////////// The Url? :: NOPE //////////////////////////
+
 import 'plugins/kibana/doc';
 import 'plugins/kibana/dev_tools';
 import 'ui/vislib';
@@ -23,6 +31,7 @@ import 'leaflet';
 
 routes.enable();
 
+// alfredt: if did not find url: redirect  to discover page.
 routes
 .otherwise({
   redirectTo: `/${chrome.getInjected('kbnDefaultAppId', 'discover')}`

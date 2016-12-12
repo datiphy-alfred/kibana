@@ -12,6 +12,7 @@ const chrome = require('ui/chrome')
 .setRootController('ui', function ($http, $scope) {
   const ui = this;
   ui.loading = false;
+  $scope.debug = true;
 
   ui.refresh = function () {
     ui.loading = true;

@@ -1,0 +1,38 @@
+<form role="form" class="container-fluid" ng-submit="opts.saveDataSource()">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+
+        <div class="form-group">
+          <label for="SaveSearch" class="control-label">
+            Save Search (Modified Label)
+          </label>
+          <input id="SaveSearch" ng-model="opts.savedSearch.title"
+            input-focus="select" class="form-control"
+            placeholder="Name this search...">
+        </div>
+
+        <div class="form-group">
+
+          <!-- Like Dashboard we want to save timestamp as well. -->
+          <label>
+            <input type="checkbox" ng-model="opts.discover.timeRestore"
+              ng-checked="opts.discover.timeRestore">
+            Store time with dashboard
+            <kbn-info info="Change the time filter to the currently selected time each time this discover-search is loaded"></kbn-info>
+          </label>
+          <!-- Original button location -->
+        </div>
+
+        <button
+          ng-disabled="!opts.savedSearch.title"
+          data-test-subj="discover-save-search-btn"
+          type="submit"
+          class="btn btn-primary">
+          (MyDiscover) Save
+        </button>
+
+      </div>
+    </div>
+  </div>
+</form>

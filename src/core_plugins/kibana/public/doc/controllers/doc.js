@@ -38,6 +38,7 @@ app.controller('doc', function ($scope, $route, es, timefilter) {
 
   // Pretty much only need this for formatting, not actually using it for fetching anything.
   $scope.indexPattern = $route.current.locals.indexPattern;
+  $scope.debug = true;
 
   const computedFields = $scope.indexPattern.getComputedFields();
 
